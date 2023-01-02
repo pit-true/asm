@@ -5,24 +5,24 @@ main:
 	push {lr}
 
 func_dmgHP_1:
-	ldr r0, =0x020241E4 + 0x56	/*ŽèŽ‚¿1•C–Ú‚ÌŒ»ÝHP‚ÌƒAƒhƒŒƒX‚ðr0‚Éƒ[ƒh*/
-	ldrh r1, [r0]			/*Œ»ÝHPƒAƒhƒŒƒX‚Ì’†g2byte‚ðr1‚Éƒ[ƒh(Œ»ÝHP‚ªr1‚ÉŠi”[‚³‚ê‚é)*/
-	cmp r1, #0x3			/*r1‚Æ0x3‚ð”äŠr*/
-	ble checkHP_2			/*r1‚ª0x3ˆÈ‰º‚Å‚ ‚ê‚ÎŽŸ‚Ì”»’è‚Ö*/
+	ldr r0, =0x020241E4 + 0x56	/*æ‰‹æŒã¡1åŒ¹ç›®ã®ç¾åœ¨HPã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’r0ã«ãƒ­ãƒ¼ãƒ‰*/
+	ldrh r1, [r0]			/*ç¾åœ¨HPã‚¢ãƒ‰ãƒ¬ã‚¹ã®ä¸­èº«2byteã‚’r1ã«ãƒ­ãƒ¼ãƒ‰(ç¾åœ¨HPãŒr1ã«æ ¼ç´ã•ã‚Œã‚‹)*/
+	cmp r1, #0x3			/*r1ã¨0x3ã‚’æ¯”è¼ƒ*/
+	ble func_dmgHP_2			/*r1ãŒ0x3ä»¥ä¸‹ã§ã‚ã‚Œã°æ¬¡ã®åˆ¤å®šã¸*/
 
-	/*ƒWƒƒƒ“ƒv‚µ‚Ä‚¢‚È‚¢‚Æ‚¢‚¤‚±‚Æ‚Í0x4ˆÈã‚Å‚ ‚é‚Ì‚ÅA‚±‚Ì‚Ü‚Ü‰º‹L‚ÉŒ¸ŽZˆ—‚ð‘‚¢‚Ä‚¢‚­*/
+	/*ã‚¸ãƒ£ãƒ³ãƒ—ã—ã¦ã„ãªã„ã¨ã„ã†ã“ã¨ã¯0x4ä»¥ä¸Šã§ã‚ã‚‹ã®ã§ã€ã“ã®ã¾ã¾ä¸‹è¨˜ã«æ¸›ç®—å‡¦ç†ã‚’æ›¸ã„ã¦ã„ã*/
 
-	sub r1, #0x3			/*r1‚©‚ç0x3ˆø‚­*/
-	strh r1, [r0]			/*r1‚ðr0‚Ì’†g‚Ö‘‚«ž‚Þ*/
+	sub r1, #0x3			/*r1ã‹ã‚‰0x3å¼•ã*/
+	strh r1, [r0]			/*r1ã‚’r0ã®ä¸­èº«ã¸æ›¸ãè¾¼ã‚€*/
 
 func_dmgHP_2:
-	ldr r0, =0x02024248 + 0x56	/*ŽèŽ‚¿2•C–Ú‚ÌŒ»ÝHP‚ÌƒAƒhƒŒƒX‚ðr0‚Éƒ[ƒh*/
-	ldrh r1, [r0]			/*Œ»ÝHPƒAƒhƒŒƒX‚Ì’†g2byte‚ðr1‚Éƒ[ƒh(Œ»ÝHP‚ªr1‚ÉŠi”[‚³‚ê‚é)*/
-	cmp r1, #0x3			/*r1‚Æ0x3‚ð”äŠr*/
-	ble end			/*r1‚ª0x3ˆÈ‰º‚Å‚ ‚ê‚Îend‚Ö*/
+	ldr r0, =0x02024248 + 0x56	/*æ‰‹æŒã¡2åŒ¹ç›®ã®ç¾åœ¨HPã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’r0ã«ãƒ­ãƒ¼ãƒ‰*/
+	ldrh r1, [r0]			/*ç¾åœ¨HPã‚¢ãƒ‰ãƒ¬ã‚¹ã®ä¸­èº«2byteã‚’r1ã«ãƒ­ãƒ¼ãƒ‰(ç¾åœ¨HPãŒr1ã«æ ¼ç´ã•ã‚Œã‚‹)*/
+	cmp r1, #0x3			/*r1ã¨0x3ã‚’æ¯”è¼ƒ*/
+	ble end			/*r1ãŒ0x3ä»¥ä¸‹ã§ã‚ã‚Œã°endã¸*/
 
-	sub r1, #0x3			/*r1‚©‚ç0x3ˆø‚­*/
-	strh r1, [r0]			/*r1‚ðr0‚Ì’†g‚Ö‘‚«ž‚Þ*/
+	sub r1, #0x3			/*r1ã‹ã‚‰0x3å¼•ã*/
+	strh r1, [r0]			/*r1ã‚’r0ã®ä¸­èº«ã¸æ›¸ãè¾¼ã‚€*/
 
 end:
 	pop {pc}
